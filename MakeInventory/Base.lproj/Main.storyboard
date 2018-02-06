@@ -70,6 +70,7 @@
                                             <outlet property="labelCount" destination="5bq-8a-Jt2" id="Qhz-ND-cW4"/>
                                             <outlet property="labelDateCreated" destination="UCP-Te-rnt" id="ySf-5S-FRz"/>
                                             <outlet property="labelTitle" destination="bm4-vb-2Zg" id="bVG-0C-yoY"/>
+                                            <segue destination="WqD-ZL-E89" kind="show" identifier="show detailed inventory" id="HWR-01-OOE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,7 +93,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kyu-gz-1id">
                             <connections>
-                                <segue destination="WqD-ZL-E89" kind="show" id="S2E-Xo-JB8"/>
+                                <segue destination="WqD-ZL-E89" kind="show" identifier="show add inventory" id="S2E-Xo-JB8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -159,7 +160,7 @@
         <!--Add Inventory-->
         <scene sceneID="AaZ-8R-4cl">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="WqD-ZL-E89" customClass="AddInventoryViewController" customModule="MakeInventory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="WqD-ZL-E89" customClass="InventoryDetailViewController" customModule="MakeInventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyo-6R-xeW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,6 +215,11 @@
                         <viewLayoutGuide key="safeArea" id="X0F-RL-Igd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Inventory" id="Ypk-qS-RCZ">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="f1N-vF-bdO">
+                            <connections>
+                                <action selector="pressedCancel:" destination="WqD-ZL-E89" id="5nb-tE-FfT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="HqY-Bx-TJT">
                             <connections>
                                 <action selector="savePressed:" destination="WqD-ZL-E89" id="W6U-0r-MH3"/>
@@ -221,8 +227,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="inventoryNameField" destination="l2f-NL-QCt" id="zRA-Jm-Oz1"/>
-                        <outlet property="inventoryQuantityField" destination="nxw-r5-g6J" id="mGo-rl-Hh6"/>
+                        <outlet property="textFieldQuanity" destination="nxw-r5-g6J" id="mGo-rl-Hh6"/>
+                        <outlet property="textFieldTitle" destination="l2f-NL-QCt" id="zRA-Jm-Oz1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPW-GK-OHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -248,4 +254,7 @@
             <point key="canvasLocation" x="-466" y="34"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HWR-01-OOE"/>
+    </inferredMetricsTieBreakers>
 </document>

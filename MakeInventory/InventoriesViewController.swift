@@ -20,7 +20,21 @@ class InventoriesViewController: UIViewController {
     
     // MARK: - VOID METHODS
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "show detailed inventory":
+                let vc = segue.destination as! InventoryDetailViewController
+                if let indexPath = tableView.indexPath(for: sender as! UITableViewCell) {
+                    let item = inventories[indexPath.row]
+                    vc.detailedInventory = item
+                }
+            case "show add inventory":
+                break
+            default: break
+            }
+        }
+    }
     
     // MARK: - IBACTIONS
     

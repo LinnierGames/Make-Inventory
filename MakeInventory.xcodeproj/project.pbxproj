@@ -14,9 +14,9 @@
 		055B95161FB932B800F3A369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 055B95151FB932B800F3A369 /* Assets.xcassets */; };
 		055B95191FB932B800F3A369 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055B95171FB932B800F3A369 /* LaunchScreen.storyboard */; };
 		055B95211FB9491100F3A369 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B95201FB9491100F3A369 /* CoreDataStack.swift */; };
-		055B95231FB964F800F3A369 /* AddInventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B95221FB964F800F3A369 /* AddInventoryViewController.swift */; };
 		055B95251FB9673C00F3A369 /* Inventory+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B95241FB9673C00F3A369 /* Inventory+Extensions.swift */; };
 		E989538E202935F4000886F5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989538D202935F4000886F5 /* CustomTableViewCell.swift */; };
+		E9BF54E820293DC300635EA7 /* InventoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BF54E720293DC300635EA7 /* InventoryDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,9 @@
 		055B95181FB932B800F3A369 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		055B951A1FB932B800F3A369 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055B95201FB9491100F3A369 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		055B95221FB964F800F3A369 /* AddInventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInventoryViewController.swift; sourceTree = "<group>"; };
 		055B95241FB9673C00F3A369 /* Inventory+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inventory+Extensions.swift"; sourceTree = "<group>"; };
 		E989538D202935F4000886F5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E9BF54E720293DC300635EA7 /* InventoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				055B950B1FB932B800F3A369 /* AppDelegate.swift */,
-				055B95221FB964F800F3A369 /* AddInventoryViewController.swift */,
+				E9BF54E720293DC300635EA7 /* InventoryDetailViewController.swift */,
 				055B950D1FB932B800F3A369 /* InventoriesViewController.swift */,
 				055B95201FB9491100F3A369 /* CoreDataStack.swift */,
 				055B950F1FB932B800F3A369 /* Main.storyboard */,
@@ -156,8 +156,8 @@
 				055B950C1FB932B800F3A369 /* AppDelegate.swift in Sources */,
 				E989538E202935F4000886F5 /* CustomTableViewCell.swift in Sources */,
 				055B95211FB9491100F3A369 /* CoreDataStack.swift in Sources */,
+				E9BF54E820293DC300635EA7 /* InventoryDetailViewController.swift in Sources */,
 				055B95251FB9673C00F3A369 /* Inventory+Extensions.swift in Sources */,
-				055B95231FB964F800F3A369 /* AddInventoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
