@@ -21,14 +21,11 @@ class AddInventoryViewController: UIViewController {
     @IBAction func savePressed(_ sender: Any) {
         guard let name = inventoryNameField.text, let quantity = Int64(inventoryQuantityField.text!) else {return}
         
-        let inv = Inventory(
-            context: coreDataStack.privateContext
-        )
+        let context = coreDataStack.privateContext
         
-        inv.name = name
-        inv.quantity = quantity
+        Inventory(title: name, count: quantity, in: context)
         
-        coreDataStack.saveTo(context: coreDataStack.privateContext)
+        coreDataStack.saveTo(context: context)
         
         self.navigationController?.popViewController(animated: true)
     }

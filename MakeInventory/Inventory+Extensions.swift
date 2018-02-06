@@ -10,11 +10,13 @@ import Foundation
 import CoreData
 
 extension Inventory {
-    convenience init(context: NSManagedObjectContext) {
+    
+    @discardableResult
+    convenience init(title: String, count: Int64, dateCreated: Date = Date(), in context: NSManagedObjectContext) {
+        self.init(context: context)
         
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Inventory", in:
-            context)!
-        
-        self.init(entity: entityDescription, insertInto: context)
+        self.title = title
+        self.quantity = count
+        self.dateCreated = dateCreated
     }
 }

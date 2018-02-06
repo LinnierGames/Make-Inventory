@@ -10,10 +10,23 @@ import UIKit
 import CoreData
 
 class InventoriesViewController: UIViewController {
-    let stack = CoreDataStack.instance
+    
+    private let stack = CoreDataStack.instance
+    var inventories = [Inventory]()
     
     @IBOutlet weak var tableView: UITableView!
-    var inventories = [Inventory]()
+    
+    // MARK: - RETURN VALUES
+    
+    // MARK: - VOID METHODS
+    
+    // MARK: - IBACTIONS
+    
+    @IBAction func pressDone(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
+    // MARK: - LIFE CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +43,7 @@ class InventoriesViewController: UIViewController {
             self.inventories = result
             self.tableView.reloadData()
             
-        }catch let error {
+        } catch {
             print(error)
         }
     }
@@ -49,12 +62,13 @@ extension InventoriesViewController: UITableViewDataSource {
 
 extension InventoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InventoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
         
         let item = inventories[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "x\(item.quantity)"
+        cell.labelTitle.text = item.title
+        cell.labelCount.text = "x\(item.quantity)"
+        cell.labelDateCreated.text = "Created at: \(item.dateCreated!)"
         
         return cell
     }
