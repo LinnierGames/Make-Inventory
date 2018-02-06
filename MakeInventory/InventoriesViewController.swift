@@ -20,6 +20,8 @@ class InventoriesViewController: UIViewController {
     
     // MARK: - VOID METHODS
     
+    
+    
     // MARK: - IBACTIONS
     
     @IBAction func pressDone(_ sender: Any) {
@@ -49,7 +51,6 @@ class InventoriesViewController: UIViewController {
     }
 }
 
-
 extension InventoriesViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -71,5 +72,21 @@ extension InventoriesViewController: UITableViewDelegate {
         cell.labelDateCreated.text = "Created at: \(item.dateCreated!)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let item = inventories[indexPath.row]
+            
+            if let context = item.managedObjectContext {
+                context.delete(item)
+                inventories.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                CoreDataStack.instance.saveTo(context: context)
+            }
+        default:
+            break
+        }
     }
 }
