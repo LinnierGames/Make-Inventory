@@ -10,8 +10,7 @@ import Foundation
 import CoreData
 
 extension Inventory {
-    
-    @discardableResult
+
     convenience init(title: String, count: Int64, dateCreated: Date = Date(), in context: NSManagedObjectContext) {
         self.init(context: context)
         
